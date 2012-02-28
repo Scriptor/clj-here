@@ -22,3 +22,10 @@
     `(let [~locals (swank.core/local-bindings)
            ~new-arg-values (reduce ~eval-arg '() [~@args])]
        (apply ~f (reverse ~new-arg-values)))))
+
+(defmacro debug-block [& lines]
+  `(do ~@(map (fn [line]
+         (if (seq? line)
+           `(debug ~@line)
+           line))
+       lines)))
