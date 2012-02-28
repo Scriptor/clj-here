@@ -22,6 +22,7 @@ The main function in clj-here is `debug` so we'll need to :use it and transform 
 (debug prn "hello" (foo :bar :baz))
 ```
 
+### :dbg-prn-last
 The :dbg-prn-last keyword can be inserted after an argument to print it out.
 
 ```clojure
@@ -32,6 +33,7 @@ The :dbg-prn-last keyword can be inserted after an argument to print it out.
 ; Will print out "hello" in the repl
 ```
 
+### :break
 The :break keyword creates a breakpoint in the middle of a function. It uses sldb and
 sets the locals as the all the arguments before it.
 
